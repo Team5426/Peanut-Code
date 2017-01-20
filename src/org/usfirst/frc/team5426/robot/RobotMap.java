@@ -1,26 +1,27 @@
 package org.usfirst.frc.team5426.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.tables.TableKeyNotDefinedException;
 
+/**
+ * Created by Duncan on 1/20/2017.
+ */
 public class RobotMap {
 
     public static int leftMotorChannel() {
 
-        if (SmartDashboard.containsKey("Motor Channel: Left")) {
+        try {
 
             return ((int) SmartDashboard.getNumber("Motor Channel: Left"));
-        }
 
-        return -1;
+        } catch (TableKeyNotDefinedException e) {
+
+            e.printStackTrace();
+        }
     }
 
     public static int rightMotorChannel() {
 
-        if (SmartDashboard.containsKey("Motor Channel: Right")) {
-
-            return ((int) SmartDashboard.getNumber("Motor Channel: Right"));
-        }
-
-        return -1;
+        return ((int) SmartDashboard.getNumber("Motor Channel: Right"));
     }
 }

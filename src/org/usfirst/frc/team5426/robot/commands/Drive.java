@@ -4,6 +4,9 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team5426.robot.subsystems.DriveTrain;
 
+/**
+ * Created by Duncan on 1/20/2017.
+ */
 public class Drive extends Command {
 
     private DriveTrain driveTrain;
