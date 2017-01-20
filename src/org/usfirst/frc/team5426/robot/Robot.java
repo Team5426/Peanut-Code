@@ -2,14 +2,8 @@
 package org.usfirst.frc.team5426.robot;
 
 import edu.wpi.cscore.UsbCamera;
-import edu.wpi.cscore.VideoSource;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team5426.robot.commands.CommandBase;
 
 /**
  * Created by Duncan on 1/20/2017.
@@ -29,6 +23,8 @@ public class Robot extends IterativeRobot {
 		camserver.addCamera(cam);
 
 		camserver.startAutomaticCapture();
+
+		OI.init();
 	}
 
 	public void autonomousInit() {

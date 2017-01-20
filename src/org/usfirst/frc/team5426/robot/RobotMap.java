@@ -10,18 +10,11 @@ public class RobotMap {
 
     public static int leftMotorChannel() {
 
-        try {
-
-            return ((int) SmartDashboard.getNumber("Motor Channel: Left"));
-
-        } catch (TableKeyNotDefinedException e) {
-
-            e.printStackTrace();
-        }
+        return ((int) SmartDashboard.getNumber("Motor Channel: Left", 0));
     }
 
     public static int rightMotorChannel() {
 
-        return ((int) SmartDashboard.getNumber("Motor Channel: Right"));
+        return ((int) SmartDashboard.getNumber("Motor Channel: Right", 0));
     }
 }

@@ -54,6 +54,6 @@
       </library>
     </orderEntry>
     <orderEntry type="jdk" jdkName="JavaSE-1.8" jdkType="JavaSDK" />
-    <orderEntry type="library" name="cscore" level="project" />
+    <orderEntry type="library" name="WPILib" level="project" />
   </component>
 </module>
