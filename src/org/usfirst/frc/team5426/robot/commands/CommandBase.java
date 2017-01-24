@@ -1,20 +1,35 @@
 package org.usfirst.frc.team5426.robot.commands;
 
+import org.usfirst.frc.team5426.robot.OI;
+import org.usfirst.frc.team5426.robot.subsystems.DriveTrain;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+
 /**
- * Created by Duncan on 1/20/2017.
+ * All subsystems need to be initialized in this file first.
  */
 public abstract class CommandBase extends Command {
 
-    public CommandBase() {
+	public static DriveTrain driveTrain;
+	public static OI oi;
+	
+	public static void init() {		
+		driveTrain = new DriveTrain();
+		oi = new OI();
+	}
 
-        super();
-    }
+	public CommandBase(String name) {
+		super(name);
+	}
 
-    public static void updateDashboard() {
-
-        SmartDashboard.putString("Data Test", "");
-    }
+	public CommandBase() {
+		super();
+	}
+	
+	public static void updateSmartDashboard() {
+		
+	}
+	
 }
