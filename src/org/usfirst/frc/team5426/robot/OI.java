@@ -1,6 +1,7 @@
-package org.usfirst.team5426.robot;
+package org.usfirst.frc.team5426.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -54,4 +55,10 @@ public class OI {
 
         return stick.getRawAxis(4);
     }
+    
+    public static void rumble(float l, float r) {
+    	
+		stick.setRumble(RumbleType.kLeftRumble, l);
+		stick.setRumble(RumbleType.kRightRumble, r);
+	}
 }

@@ -1,7 +1,8 @@
-package org.usfirst.team5426.robot.commands;
+package org.usfirst.frc.team5426.robot.commands;
+
+import org.usfirst.frc.team5426.robot.OI;
 
 import edu.wpi.first.wpilibj.Timer;
-import org.usfirst.team5426.robot.OI;
 
 public class Drive extends CommandBase {
 
@@ -17,6 +18,8 @@ public class Drive extends CommandBase {
     protected void execute() {
 
         drive.drive(OI.getLeftAxisY(), OI.getLeftAxisX());
+        
+        if (ultra.getDistance() <= 20) OI.rumble(10, 10);
 
         Timer.delay(0.005);
     }
