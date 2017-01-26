@@ -6,34 +6,38 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class Drive extends CommandBase {
 
-    public Drive() {
+	public Drive() {
 
-        requires(drive);
-    }
+		requires(drive);
+	}
 
-    protected void initialize() {
+	protected void initialize() {
 
-    }
+	}
 
-    protected void execute() {
+	protected void execute() {
 
-        drive.drive(OI.getLeftAxisY(), OI.getLeftAxisX());
-        
-        if (ultra.getDistance() <= 20) OI.rumble(10, 10);
+		if (!(OI.stick.getLeftTrigger() >= 0.9) & (!(OI.stick.getRightTrigger() >= 0.9))) {
+			
+			drive.drive(OI.stick.getLeftAxisY(), OI.stick.getLeftAxisY());
 
-        Timer.delay(0.005);
-    }
+			if (ultra.getDistance() <= 20)
+				OI.stick.rumble(10, 10);
 
-    protected boolean isFinished() {
+			Timer.delay(0.005);
+		}
+	}
 
-        return false;
-    }
+	protected boolean isFinished() {
 
-    protected void end() {
+		return false;
+	}
 
-    }
+	protected void end() {
 
-    protected void interrupted() {
+	}
 
-    }
+	protected void interrupted() {
+
+	}
 }
